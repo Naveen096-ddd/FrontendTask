@@ -1,0 +1,264 @@
+.signin{
+    width:50px;
+    padding:10px;
+    border:none;
+    border-radius:5px;
+    background:#3d4840;
+    color:#fff;
+    font-size:16px;
+    cursor:pointer;
+    text-decoration: none;
+   /* margin-left: 40%; */
+}
+body{
+  height: auto;
+}
+.img {
+  height: 100px;
+  width: 200px;
+  float: left;
+  margin: 5px 15px;
+  background: none;
+   /* position: fixed; */
+  top: 0;
+  left: 0;
+  z-index: 1100;
+}
+.navhome {
+  position: relative;
+  overflow: hidden;
+}
+.navbar {
+  overflow: visible;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+
+@keyframes navbarsFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes navbarsFadeIni {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.img {
+  animation: navbarsFadeIni 7s ease;
+}
+.navbar{
+  animation: navbarsFadeIn 3s ease;
+}
+.topnav {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+.navbar a {
+  color: #f2f2f2;
+  text-align: center;
+  padding: 25px 20px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.navbar a:hover,
+.dropbtn:hover {
+  background-color: #8f1aaf;
+  color: white;
+  transform: scale(1.1);
+  transition: 0.4s;
+  border-radius: 15px;
+}
+.navbar a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  font-size: 17px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 25px 30px;
+  background-color: inherit;
+  font-family: inherit;
+  cursor: pointer;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  position: relative;
+}
+
+.dropdown-content a:hover {
+  background-color: #8f1aaf;
+  transform: scale(1.1);
+  transition: 0.4s;
+  border-radius: 7px;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.menu-btn {
+  display: none;
+  font-size: 30px;
+  background: none;
+  border: none;
+  color: #fff;
+  position: absolute;
+  right: 20px;
+  top: 25px;
+  cursor: pointer;
+  z-index: 1001;
+}
+.topnav {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+@media screen and (max-width: 600px) {
+  .menu-btn {
+    display: block;
+  }
+
+  .topnav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #1a0606;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    z-index: 999;
+  }
+
+  .topnav.open {
+    display: flex;
+  }
+
+  .navbar a,
+  .dropbtn {
+    text-align: left;
+    padding: 15px 10px;
+    width: 100%;
+  }
+
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+    background-color: #f9f9f9;
+    width: 100%;
+  }
+
+  .dropdown-content a {
+    padding: 12px 16px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .menu-btn {
+    display: block;
+  }
+
+  .topnav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #1a0606;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .topnav.open {
+    display: flex;
+  }
+
+  .navbar a,
+  .dropdown .dropbtn {
+    text-align: left;
+    padding: 15px 10px;
+    width: 100%;
+  }
+
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+    background-color: #f9f9f9;
+    width: 100%;
+  }
+
+  .dropdown-content a {
+    width: 100%;
+    padding: 12px 16px;
+  }
+}
+.sub-card{
+  flex: 1 1 calc(33.333% - 16px);
+  box-sizing: border-box;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+.cards-items{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: space-between;
+  width: 95%;
+  padding: 10px auto;
+  margin: 10px auto;
+}
+.sub-card img {
+  max-width: 100%;
+  height: auto;
+}
+.sub-card p{
+    font-size: 14px;
+}
+.addbtn{
+  float: right;
+  background-color: #8f1aaf;
+  color: white;
+  height: 40px;
+  width: 50px;
+  border-radius: 5px;
+}
+.addbtn:hover{
+  background-color: #3d4840;
+  transform: 3s;
+}

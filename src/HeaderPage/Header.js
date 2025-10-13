@@ -14,10 +14,10 @@ function Header() {
         <img src={image1} alt="logo" className='img' />
         <div className="topnav">
           <div className='topnav'>
-            <a href="Home">Home</a>
+             <Link to='/'>Home</Link>
             <a href="#About">About</a>
           <div className="dropdown">
-            <Link to='/signup'>Services</Link>
+            <Link to='/'>Services</Link>
             <div className="dropdown-content">
                 <a href="#web">Web Development</a>
                 <a href="#soft">Software Development</a>

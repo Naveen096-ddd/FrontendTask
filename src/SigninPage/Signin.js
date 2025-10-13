@@ -10,12 +10,20 @@ function SignupPage() {
     const[email,setemail]=useState("");
     const[role,setrole] = useState("");
     const[password,setpassword]=useState("");
-    const[error,setError] = useState('')
+    const[error,setError] = useState('');
+    const [validationErrors, setValidationErrors] = useState({});
     const navigate = useNavigate();
     const handleSubmit= async(e)=>{
         e.preventDefault();
-        setError('')
+        setError('');
+        const errors = validate();
+        setValidationErrors(errors);
+        if (Object.keys(errors).length > 0) {
+        return;
+        }
+
         const userData =({fname,lname,username,email,role,password});
+        
         console.log(userData)
         alert("Signup successful");
         try {
@@ -33,6 +41,16 @@ function SignupPage() {
               setError("❌ Invalid username or password");
             }
     }
+      const validate = () => {
+            const errors = {};
+            if (fname.trim().length < 2) errors.fname = "First name must be at least 2 characters.";
+            if (lname.trim().length < 2) errors.lname = "Last name must be at least 2 characters.";
+            if (!username.trim()) errors.username = "Username is required.";
+            if (!/^\S+@\S+\.\S+$/.test(email)) errors.email = "Invalid email address.";
+            if (!role) errors.role = "Please select a role.";
+            if (! /^(?=.*[!@#$%^&*()_\-+={}[\]|\\:;"'<>,.?/~`]).+$/.test(password)) errors.password = "Password must be strong";
+            return errors;
+        };
   return (
     <div className="signup-container1" >
         <div className="signup-container">
@@ -44,7 +62,7 @@ function SignupPage() {
                     value={fname}
                     onChange={(e)=>setfname(e.target.value)}
                     required />
-                    
+                     {validationErrors.fname && <p className="error">{validationErrors.fname}</p>}
                 </label>
                 <br />
                 <label>
@@ -53,6 +71,7 @@ function SignupPage() {
                     value={lname}
                     onChange={(e)=>setlname(e.target.value)}
                     required />
+                     {validationErrors.lname && <p className="error">{validationErrors.lname}</p>}
                 </label>
                 <br />
                 <label>
@@ -61,6 +80,7 @@ function SignupPage() {
                     value={username}
                     onChange={(e)=>setusername(e.target.value)}
                     required />
+                    {validationErrors.username && <p className="error">{validationErrors.username}</p>}
                 </label>
                 <br />
                 <label>
@@ -69,6 +89,7 @@ function SignupPage() {
                     value={email}
                     onChange={(e)=>setemail(e.target.value)}
                     required />
+                    {validationErrors.email && <p className="error">{validationErrors.email}</p>}
                 </label>
                 <br />
                 <select className='role'
@@ -81,7 +102,7 @@ function SignupPage() {
                     <option value="Manager">Manager</option>
                     <option value="admin">Admin</option>
                 </select>
-
+                {validationErrors.role && <p className="error">{validationErrors.role}</p>}
                 <br />
                 <label>
                     Password:
@@ -89,6 +110,7 @@ function SignupPage() {
                     value={password}
                     onChange={(e)=>setpassword(e.target.value)}
                     required />
+                    {validationErrors.password && <p className="error">{validationErrors.password}</p>}
                 </label>
                 <br />
                 

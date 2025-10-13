@@ -30,9 +30,10 @@ function Loginpage(){
   };
 
     return(
+      <div className="login-page">
         <div className="login-container">
             <form className="login-form" onSubmit={handleSubmit}>
-                <h1>Login Page</h1>
+                <h1>Login</h1>
                 <label>
                     Username:
                     <input type="text" name="username"
@@ -54,6 +55,7 @@ function Loginpage(){
                 {error && <p style={{ color: 'red' }}>{error}</p>}
             </form>
         </div>
+      </div>
     )
 }
 export default Loginpage;

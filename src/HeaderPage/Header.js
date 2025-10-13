@@ -37,6 +37,7 @@ function Header() {
       <Cards/>
       <Gallery/><br/><br/>
       <Footer/>
+       <h1 className=' text-2xl bg-amber-300'>tailwindcss</h1>
     </div>
   );
 }

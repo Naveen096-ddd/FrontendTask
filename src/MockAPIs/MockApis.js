@@ -1,8 +1,8 @@
 const users = [
-  { username: 'admin@12', password: 'admin123', role: 'admin' },
-  { username: 'manager@12', password: 'manager123', role: 'Manager' },
-  { username: 'user@12', password: 'user123', role: 'student' },
-  {username: 'naveen@12',password: "naveen@123", role: 'admin'}
+  { username: 'admin', password: 'admin123', role: 'admin' },
+  { username: 'manager', password: 'manager123', role: 'Manager' },
+  { username: 'user', password: 'user123', role: 'student' },
+  {username: 'naveen',password: "naveen@123", role: 'admin'}
 ];
 
 export const mockLogin = (username, password, role) => {

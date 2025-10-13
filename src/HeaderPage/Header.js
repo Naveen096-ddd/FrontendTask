@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import Home from '../Pages/HomePage/Home';
 import Cards from '../Pages/HomePage/Cards/Cards';
 import Gallery from '../Pages/HomePage/Gallery/Gallery';
+import Footer from '../FooterPage/Footer';
 function Header() {
   return (
     <div className='navhome'>
@@ -34,7 +35,8 @@ function Header() {
       </div>
       <Home/>
       <Cards/>
-      <Gallery/>
+      <Gallery/><br/><br/>
+      <Footer/>
     </div>
   );
 }

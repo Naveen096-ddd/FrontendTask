@@ -1,0 +1,41 @@
+^ae4236e (Naveen096-ddd 2025-10-09 12:57:27 +0530  1) import React,{useState} from 'react';
+^ae4236e (Naveen096-ddd 2025-10-09 12:57:27 +0530  2) import './header.css';
+^ae4236e (Naveen096-ddd 2025-10-09 12:57:27 +0530  3) import image1  from '../assets/image1.png';
+^ae4236e (Naveen096-ddd 2025-10-09 12:57:27 +0530  4) import { Link } from 'react-router-dom';
+^ae4236e (Naveen096-ddd 2025-10-09 12:57:27 +0530  5) import Home from '../Pages/HomePage/Home';
+^ae4236e (Naveen096-ddd 2025-10-09 12:57:27 +0530  6) import Cards from '../Pages/HomePage/Cards/Cards';
+^ae4236e (Naveen096-ddd 2025-10-09 12:57:27 +0530  7) import Gallery from '../Pages/HomePage/Gallery/Gallery';
+^ae4236e (Naveen096-ddd 2025-10-09 12:57:27 +0530  8) function Header() {
+^ae4236e (Naveen096-ddd 2025-10-09 12:57:27 +0530  9)   return (
+^ae4236e (Naveen096-ddd 2025-10-09 12:57:27 +0530 10)     <div className='navhome'>
+^ae4236e (Naveen096-ddd 2025-10-09 12:57:27 +0530 11)       <div className='navbar-container'>
+^ae4236e (Naveen096-ddd 2025-10-09 12:57:27 +0530 12)       <div className="navbar" style={{position:'fixed',backgroundColor:'#191919'}}>
+^ae4236e (Naveen096-ddd 2025-10-09 12:57:27 +0530 13)         <img src={image1} alt="logo" className='img' />
+^ae4236e (Naveen096-ddd 2025-10-09 12:57:27 +0530 14)         <div className="topnav">
+^ae4236e (Naveen096-ddd 2025-10-09 12:57:27 +0530 15)           <div className='topnav'>
+^ae4236e (Naveen096-ddd 2025-10-09 12:57:27 +0530 16)             <a href="Home">Home</a>
+^ae4236e (Naveen096-ddd 2025-10-09 12:57:27 +0530 17)             <a href="#About">About</a>
+^ae4236e (Naveen096-ddd 2025-10-09 12:57:27 +0530 18)           <div className="dropdown">
+^ae4236e (Naveen096-ddd 2025-10-09 12:57:27 +0530 19)             <Link to='/signup'>Services</Link>
+^ae4236e (Naveen096-ddd 2025-10-09 12:57:27 +0530 20)             <div className="dropdown-content">
+^ae4236e (Naveen096-ddd 2025-10-09 12:57:27 +0530 21)                 <a href="#web">Web Development</a>
+^ae4236e (Naveen096-ddd 2025-10-09 12:57:27 +0530 22)                 <a href="#soft">Software Development</a>
+^ae4236e (Naveen096-ddd 2025-10-09 12:57:27 +0530 23)                 <a href="#uiux">UI/UX Design</a>
+^ae4236e (Naveen096-ddd 2025-10-09 12:57:27 +0530 24)                 <a href="#digital">Digital Marketing</a>
+^ae4236e (Naveen096-ddd 2025-10-09 12:57:27 +0530 25)                 <a href="#graphic">Graphic Design</a> 
+^ae4236e (Naveen096-ddd 2025-10-09 12:57:27 +0530 26)                 <a href="#seo">SEO Services</a>
+^ae4236e (Naveen096-ddd 2025-10-09 12:57:27 +0530 27)             </div>
+^ae4236e (Naveen096-ddd 2025-10-09 12:57:27 +0530 28)           </div>
+^ae4236e (Naveen096-ddd 2025-10-09 12:57:27 +0530 29)           <a href="#Contact Us">Contact</a>
+^ae4236e (Naveen096-ddd 2025-10-09 12:57:27 +0530 30)           <Link to='/signup' type='button'>Signin</Link>
+^ae4236e (Naveen096-ddd 2025-10-09 12:57:27 +0530 31)         </div>
+^ae4236e (Naveen096-ddd 2025-10-09 12:57:27 +0530 32)         </div>  
+^ae4236e (Naveen096-ddd 2025-10-09 12:57:27 +0530 33)       </div>
+^ae4236e (Naveen096-ddd 2025-10-09 12:57:27 +0530 34)       </div>
+^ae4236e (Naveen096-ddd 2025-10-09 12:57:27 +0530 35)       <Home/>
+^ae4236e (Naveen096-ddd 2025-10-09 12:57:27 +0530 36)       <Cards/>
+^ae4236e (Naveen096-ddd 2025-10-09 12:57:27 +0530 37)       <Gallery/>
+^ae4236e (Naveen096-ddd 2025-10-09 12:57:27 +0530 38)     </div>
+^ae4236e (Naveen096-ddd 2025-10-09 12:57:27 +0530 39)   );
+^ae4236e (Naveen096-ddd 2025-10-09 12:57:27 +0530 40) }
+^ae4236e (Naveen096-ddd 2025-10-09 12:57:27 +0530 41) export default Header;

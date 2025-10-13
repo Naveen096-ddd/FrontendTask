@@ -8,7 +8,7 @@
   margin: 0 auto;
   padding: 30px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 20px;
   background-color: #6a5050;
 }
 .login{
@@ -20,4 +20,11 @@
     color:#fff;
     font-size:16px;
     cursor:pointer;
+}
+input[type="text"],input[type="username"],input[type="password"]{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:5px;
 }

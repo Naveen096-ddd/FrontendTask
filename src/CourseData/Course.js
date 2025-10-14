@@ -1,110 +1,63 @@
-import React, { useState, useEffect } from "react";
-
-const coursesData = [
-  { title: "JavaScript Basics", category: "Programming", duration: 10, fee: 100 },
-  { title: "Advanced CSS", category: "Design", duration: 8, fee: 80 },
-  { title: "Python for Data Science", category: "Programming", duration: 15, fee: 150 },
-  { title: "UX Fundamentals", category: "Design", duration: 6, fee: 70 },
-];
-export default function App() {
-  const [category, setCategory] = useState("");
-  const [maxDuration, setMaxDuration] = useState("");
-  const [maxFee, setMaxFee] = useState("");
-  const [filteredCourses, setFilteredCourses] = useState(coursesData);
-  const [darkMode, setDarkMode] = useState(false);
-  const [toastMessage, setToastMessage] = useState("");
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    showToast(`Switched to ${!darkMode ? "dark" : "light"} mode`);
-  };
-  const showToast = (message) => {
-    setToastMessage(message);
-    setTimeout(() => setToastMessage(""), 3000);
-  };
-  const filterCourses = () => {
-    let results = coursesData.filter(course => {
-      return (
-        (category === "" || course.category.toLowerCase().includes(category.toLowerCase())) &&
-        (maxDuration === "" || course.duration <= Number(maxDuration)) &&
-        (maxFee === "" || course.fee <= Number(maxFee))
-      );
-    });
-
-    setFilteredCourses(results);
-
-    if (results.length === 0) {
-      showToast("No courses found");
-    } else {
-      showToast(`${results.length} course(s) found`);
-    }
-  };
-
-  return (
-    <div style={{
-      backgroundColor: darkMode ? "#222" : "#fff",
-      color: darkMode ? "#eee" : "#000",
-      minHeight: "100vh",
-      padding: 20,
-      fontFamily: "Arial"
-    }}>
-      <h1>Course Finder</h1>
-      <button onClick={toggleDarkMode} style={{ marginBottom: 20 }}>
-        Toggle Dark/Light Mode
-      </button>
-
-      <div style={{ marginBottom: 20 }}>
-        <input
-          placeholder="Category"
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-          style={{ marginRight: 10 }}
-        />
-        <input
-          type="number"
-          placeholder="Max duration (hrs)"
-          value={maxDuration}
-          onChange={(e) => setMaxDuration(e.target.value)}
-          style={{ marginRight: 10 }}
-        />
-        <input
-          type="number"
-          placeholder="Max fee ($)"
-          value={maxFee}
-          onChange={(e) => setMaxFee(e.target.value)}
-          style={{ marginRight: 10 }}
-        />
-        <button onClick={filterCourses}>Search</button>
-      </div>
-      <div>
-        {filteredCourses.map((course, index) => (
-          <div key={index} style={{
-            border: "1px solid #ccc",
-            padding: 10,
-            marginBottom: 10,
-            borderRadius: 5,
-            backgroundColor: darkMode ? "#333" : "#f9f9f9"
-          }}>
-            <h3>{course.title}</h3>
-            <p>Category: {course.category}</p>
-            <p>Duration: {course.duration} hrs</p>
-            <p>Fee: ${course.fee}</p>
+import React from "react";
+import './course.css';
+import { useState } from "react";
+const courseList = [
+  { id: 1, title: 'React Basics', category: 'Web', duration: '4 weeks', fee: 200 },
+  { id: 2, title: 'UI Design', category: 'Design', duration: '6 weeks', fee: 150 },
+  { id: 3, title: 'Node.js', category: 'Backend', duration: '5 weeks', fee: 250 },
+  { id: 4, title: 'Python Basics', category: 'Programming', duration: '3 weeks', fee: 100 },
+]
+const Course= ()=>{
+  const [title, setTitle] = useState('');
+  const [category, setCategory] = useState('');
+  const [duration, setDuration] = useState('');
+  const [fee, setFee] = useState('');
+  const [courseLists, setcourseLists] = useState(courseList);
+  const [bg,setBg] = useState('#7964b1');
+  const handleClick = (e) =>{
+    e.preventDefault();
+    console.log(title)
+    const filterdata = courseList.filter(course => {
+          return (
+            (title === '' || course.title.toLowerCase().includes(title.toLowerCase())) &&
+            (category === '' || course.category.toLowerCase().includes(category.toLowerCase())) &&
+            (duration === '' || course.duration.toLowerCase() === duration.toLowerCase()) &&
+            (fee === '' || course.fee === parseInt(fee))
+          );
+        });
+    setcourseLists(filterdata);
+  }
+  const changebg = ()=>{
+    setBg(bg === 'white' ? 'lightblue' : 'white');
+  }
+    return(
+      <div><h1 style={{textAlign:'center'}}>Search/filter courses</h1><hr/>
+          <div className="course" style={{ backgroundColor: bg, height: 'auto', padding: '20px',borderRadius:'20px' }}>
+            <button onClick={changebg} className="search">Dark/light mode toggle</button>
+            <div className="course-add">
+                <input type="text"  placeholder=" CourseName" value={title} onChange={(e) => setTitle(e.target.value)}/>
+                <input type="text"  placeholder=" Category" value={category} onChange={(e) => setCategory(e.target.value)}/>
+                <input type="text"  placeholder=" Duration" value={duration} onChange={(e) => setDuration(e.target.value)} />
+                <input type="text"  placeholder=" Fee" value={fee} onChange={(e) => setFee(e.target.value)} />
+                <button onClick={handleClick} className="search">Search Course</button>
+              </div>
+            <div className="course-list">
+              {courseLists.length>0 ?
+              courseLists.map((item, index) => (
+                <div className="course-items" key={index}>
+                  <span>{item.id}</span>
+                  <span>{item.title}</span>
+                  <span>{item.category}</span>
+                  <span>{item.duration}</span>
+                  <span>${item.fee}</span>
+                </div>
+              )
+              ) : (
+              <p>No courses found.</p>
+              )}
+            </div>
           </div>
-        ))}
-      </div>
-      {toastMessage && (
-        <div style={{
-          position: "fixed",
-          bottom: 30,
-          right: 30,
-          backgroundColor: "#333",
-          color: "white",
-          padding: "10px 20px",
-          borderRadius: 5,
-          opacity: 0.9
-        }}>
-          {toastMessage}
-        </div>
-      )}
-    </div>
-  );
+       </div>
+    )
 }
+export default Course;

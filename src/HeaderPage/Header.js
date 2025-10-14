@@ -6,6 +6,7 @@ import Home from '../Pages/HomePage/Home';
 import Cards from '../Pages/HomePage/Cards/Cards';
 import Gallery from '../Pages/HomePage/Gallery/Gallery';
 import Footer from '../FooterPage/Footer';
+import Course from '../CourseData/Course';
 function Header() {
   return (
     <div className='navhome'>
@@ -36,8 +37,9 @@ function Header() {
       <Home/>
       <Cards/>
       <Gallery/><br/><br/>
+      <Course/>
       <Footer/>
-       <h1 className=' text-2xl bg-amber-300'>tailwindcss</h1>
+      
     </div>
   );
 }

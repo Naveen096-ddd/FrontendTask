@@ -9,8 +9,7 @@ import Manager from './ManagerDashboard/Manager';
 function App() {
   return (
      <Router>
-      <Routes>
-       
+      <Routes> 
         <Route path="/" element={<Header/>} />
         <Route path="/Admin" element={<Admin/>} />
         <Route path="/Signup" element={<Signin />} />

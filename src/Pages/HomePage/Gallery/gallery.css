@@ -38,3 +38,13 @@
     background-color: #8f1aaf;
     transition: 3s;
 }
+@media (max-width: 1024px) {
+  .sub-card {
+    flex: 1 1 calc(50% - 16px);
+  }
+}
+@media (max-width: 600px) {
+  .sub-card {
+    flex: 1 1 100%;
+  }
+}

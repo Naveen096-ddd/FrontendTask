@@ -8,7 +8,7 @@
     font-size:16px;
     cursor:pointer;
     text-decoration: none;
-   /* margin-left: 40%; */
+    margin-right: 10px;
 }
 body{
   height: auto;
@@ -19,7 +19,6 @@ body{
   float: left;
   margin: 5px 15px;
   background: none;
-   /* position: fixed; */
   top: 0;
   left: 0;
   z-index: 1100;
@@ -65,11 +64,6 @@ body{
 }
 .navbar{
   animation: navbarsFadeIn 3s ease;
-}
-.topnav {
-  margin-left: auto;
-  display: flex;
-  align-items: center;
 }
 .navbar a {
   color: #f2f2f2;
@@ -144,11 +138,6 @@ body{
   cursor: pointer;
   z-index: 1001;
 }
-.topnav {
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-}
 @media screen and (max-width: 600px) {
   .menu-btn {
     display: block;
@@ -163,6 +152,9 @@ body{
     top: 80px;
     left: 0;
     z-index: 999;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
   }
 
   .topnav.open {
@@ -190,18 +182,6 @@ body{
 @media screen and (max-width: 600px) {
   .menu-btn {
     display: block;
-  }
-
-  .topnav {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background: #1a0606;
-    position: absolute;
-    top: 80px;
-    right: 0;
-    left: 0;
-    z-index: 1;
   }
 
   .topnav.open {

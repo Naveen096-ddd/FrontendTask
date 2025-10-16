@@ -8,7 +8,8 @@ import Gallery from '../Pages/HomePage/Gallery/Gallery';
 import Footer from '../FooterPage/Footer';
 import Course from '../CourseData/Course';
 import Theamtoggle from '../Chats/Theamtoggle';
-function Header() {
+function Header({ courses }) {
+  console.log('Header props:', courses);
   return (
     <div className='navhome'>
       <div className='navbar-container'>
@@ -36,7 +37,8 @@ function Header() {
       </div>
       </div>
       <Home/>
-      <Theamtoggle/>
+      <Theamtoggle course={courses}/>
+      {console.log('Courses in Header:', courses)}
       <Cards/>
       <Gallery/><br/><br/>
       <Course/>

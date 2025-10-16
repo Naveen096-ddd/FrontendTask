@@ -28,7 +28,7 @@ const Course= ()=>{
     setcourseLists(filterdata);
   }
   const changebg = ()=>{
-    setBg(bg === 'white' ? 'lightblue' : 'white');
+    setBg(bg === '#7964b1' ? 'lightblue' : '#7964b1');
   }
     return(
       <div><h1 style={{textAlign:'center'}}>Search/filter courses</h1><hr/>

@@ -7,6 +7,7 @@ import Cards from '../Pages/HomePage/Cards/Cards';
 import Gallery from '../Pages/HomePage/Gallery/Gallery';
 import Footer from '../FooterPage/Footer';
 import Course from '../CourseData/Course';
+import Theamtoggle from '../Chats/Theamtoggle';
 function Header() {
   return (
     <div className='navhome'>
@@ -35,6 +36,7 @@ function Header() {
       </div>
       </div>
       <Home/>
+      <Theamtoggle/>
       <Cards/>
       <Gallery/><br/><br/>
       <Course/>
